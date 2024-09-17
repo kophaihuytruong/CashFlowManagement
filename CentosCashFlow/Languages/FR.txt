@@ -1,0 +1,4 @@
+greeting=Bonjour!
+good_morning=Bonjour.
+good_afternoon=Bon après-midi.
+good_evening=Bonsoir.

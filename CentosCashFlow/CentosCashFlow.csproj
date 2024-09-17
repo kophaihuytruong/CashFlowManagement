@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8227B0EC-E867-4FF6-ADAA-5A6607708F3F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CentosCashFlow</RootNamespace>
+    <AssemblyName>CentosCashFlow</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.0.0\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.0.0\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChildForms\Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\Account.designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\AccountEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\AccountEditingForm.Designer.cs">
+      <DependentUpon>AccountEditingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\AccountMessageItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChildForms\AccountMessageItem.Designer.cs">
+      <DependentUpon>AccountMessageItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\CategoryAddingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\CategoryAddingForm.Designer.cs">
+      <DependentUpon>CategoryAddingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\CategoryEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\CategoryEditForm.Designer.cs">
+      <DependentUpon>CategoryEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\CategoryItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChildForms\CategoryItem.Designer.cs">
+      <DependentUpon>CategoryItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\ChangingPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\ChangingPasswordForm.Designer.cs">
+      <DependentUpon>ChangingPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\ConfirmPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\ConfirmPasswordForm.Designer.cs">
+      <DependentUpon>ConfirmPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\CurrencyAddingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\CurrencyAddingForm.Designer.cs">
+      <DependentUpon>CurrencyAddingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\CurrencyEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\CurrencyEditingForm.Designer.cs">
+      <DependentUpon>CurrencyEditingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\CurrencyItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChildForms\CurrencyItem.Designer.cs">
+      <DependentUpon>CurrencyItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\DebtItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChildForms\DebtItem.Designer.cs">
+      <DependentUpon>DebtItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\FriendAccountAddingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\FriendAccountAddingForm.Designer.cs">
+      <DependentUpon>FriendAccountAddingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\Home.designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\InformItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChildForms\InformItem.Designer.cs">
+      <DependentUpon>InformItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\LanguageAddingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\LanguageAddingForm.Designer.cs">
+      <DependentUpon>LanguageAddingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\LanguageEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\LanguageEditingForm.Designer.cs">
+      <DependentUpon>LanguageEditingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\LanguageItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChildForms\LanguageItem.Designer.cs">
+      <DependentUpon>LanguageItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\LoanItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChildForms\LoanItem.Designer.cs">
+      <DependentUpon>LoanItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\ManageAdminAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\ManageAdminAccounts.Designer.cs">
+      <DependentUpon>ManageAdminAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\ManageCurrencies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\ManageCurrencies.Designer.cs">
+      <DependentUpon>ManageCurrencies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\ManageLanguages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\ManageLanguages.Designer.cs">
+      <DependentUpon>ManageLanguages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\ManageUserAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\ManageUserAccount.Designer.cs">
+      <DependentUpon>ManageUserAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\MessageItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChildForms\MessageItem.Designer.cs">
+      <DependentUpon>MessageItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\Messages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\Messages.Designer.cs">
+      <DependentUpon>Messages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\NewAdminAccountAddingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\NewAdminAccountAddingForm.Designer.cs">
+      <DependentUpon>NewAdminAccountAddingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\NewLaguages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\NewLaguages.Designer.cs">
+      <DependentUpon>NewLaguages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\Overview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\Overview.Designer.cs">
+      <DependentUpon>Overview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\Paybook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\Paybook.designer.cs">
+      <DependentUpon>Paybook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\Settings.designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\TransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\TransactionForm.Designer.cs">
+      <DependentUpon>TransactionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\TransactionAddingChildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\TransactionAddingChildForm.Designer.cs">
+      <DependentUpon>TransactionAddingChildForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\TransactionEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\TransactionEditingForm.Designer.cs">
+      <DependentUpon>TransactionEditingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\TransactionItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChildForms\TransactionItem.Designer.cs">
+      <DependentUpon>TransactionItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\TransactionListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\TransactionListView.Designer.cs">
+      <DependentUpon>TransactionListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\UserAccountEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\UserAccountEditingForm.Designer.cs">
+      <DependentUpon>UserAccountEditingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\UserAccountItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChildForms\UserAccountItem.Designer.cs">
+      <DependentUpon>UserAccountItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\UserMessagesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\UserMessagesForm.Designer.cs">
+      <DependentUpon>UserMessagesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\Wide.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChildForms\Wide.designer.cs">
+      <DependentUpon>Wide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\LanguageDictionary.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\ConnectCategory.cs" />
+    <Compile Include="Models\ConnectCurrency.cs" />
+    <Compile Include="Models\ConnectExport.cs" />
+    <Compile Include="Models\ConnectLanguage.cs" />
+    <Compile Include="Models\ConnectMessage.cs" />
+    <Compile Include="Models\ConnectPassword.cs" />
+    <Compile Include="Models\ConnectTransaction.cs" />
+    <Compile Include="Models\ConnectUsers.cs" />
+    <Compile Include="Models\Currency.cs" />
+    <Compile Include="Models\DbContext.cs" />
+    <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\Settings.cs" />
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserAccountInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChildForms\Account.resx">
+      <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\AccountEditingForm.resx">
+      <DependentUpon>AccountEditingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\AccountMessageItem.resx">
+      <DependentUpon>AccountMessageItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\CategoryAddingForm.resx">
+      <DependentUpon>CategoryAddingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\CategoryEditForm.resx">
+      <DependentUpon>CategoryEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\CategoryItem.resx">
+      <DependentUpon>CategoryItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\ChangingPasswordForm.resx">
+      <DependentUpon>ChangingPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\ConfirmPasswordForm.resx">
+      <DependentUpon>ConfirmPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\CurrencyAddingForm.resx">
+      <DependentUpon>CurrencyAddingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\CurrencyEditingForm.resx">
+      <DependentUpon>CurrencyEditingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\CurrencyItem.resx">
+      <DependentUpon>CurrencyItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\DebtItem.resx">
+      <DependentUpon>DebtItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\FriendAccountAddingForm.resx">
+      <DependentUpon>FriendAccountAddingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\InformItem.resx">
+      <DependentUpon>InformItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\LanguageAddingForm.resx">
+      <DependentUpon>LanguageAddingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\LanguageEditingForm.resx">
+      <DependentUpon>LanguageEditingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\LanguageItem.resx">
+      <DependentUpon>LanguageItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\LoanItem.resx">
+      <DependentUpon>LoanItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\ManageAdminAccounts.resx">
+      <DependentUpon>ManageAdminAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\ManageCurrencies.resx">
+      <DependentUpon>ManageCurrencies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\ManageLanguages.resx">
+      <DependentUpon>ManageLanguages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\ManageUserAccount.resx">
+      <DependentUpon>ManageUserAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\MessageItem.resx">
+      <DependentUpon>MessageItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\Messages.resx">
+      <DependentUpon>Messages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\NewAdminAccountAddingForm.resx">
+      <DependentUpon>NewAdminAccountAddingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\NewLaguages.resx">
+      <DependentUpon>NewLaguages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\Overview.resx">
+      <DependentUpon>Overview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\Paybook.resx">
+      <DependentUpon>Paybook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\TransactionForm.resx">
+      <DependentUpon>TransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\TransactionAddingChildForm.resx">
+      <DependentUpon>TransactionAddingChildForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\TransactionEditingForm.resx">
+      <DependentUpon>TransactionEditingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\TransactionItem.resx">
+      <DependentUpon>TransactionItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\TransactionListView.resx">
+      <DependentUpon>TransactionListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\UserAccountEditingForm.resx">
+      <DependentUpon>UserAccountEditingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\UserAccountItem.resx">
+      <DependentUpon>UserAccountItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\UserMessagesForm.resx">
+      <DependentUpon>UserMessagesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\Wide.resx">
+      <DependentUpon>Wide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\DB_CashFlowManagement.sql" />
+    <Content Include="Languages\EN.txt" />
+    <Content Include="Languages\FR.txt" />
+    <Content Include="Languages\VN.txt" />
+    <Content Include="Resources\account.png" />
+    <Content Include="Resources\Cat-With-Wry-Smile-icon.png" />
+    <Content Include="Resources\categories.png" />
+    <Content Include="Resources\category_df.png" />
+    <Content Include="Resources\centos.png" />
+    <None Include="Resources\comments.png" />
+    <Content Include="Resources\creative-commons-nc.png" />
+    <None Include="Resources\file.png" />
+    <None Include="Resources\globalization.png" />
+    <Content Include="Resources\home.png" />
+    <Content Include="Resources\icon.ico" />
+    <Content Include="Resources\icon.png" />
+    <None Include="Resources\languages.png" />
+    <Content Include="Resources\laptop-code.png" />
+    <Content Include="Resources\overview.png" />
+    <Content Include="Resources\pay.png" />
+    <Content Include="Resources\puzzle-piece.png" />
+    <Content Include="Resources\settings.png" />
+    <Content Include="Resources\transaction.png" />
+    <None Include="Resources\user.png" />
+    <Content Include="Resources\Very-Basic-Menu-icon.png" />
+    <None Include="Resources\world.png" />
+    <None Include="Resources\world-64.png" />
+    <Content Include="Resources\x-24-icon.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
